@@ -1,0 +1,52 @@
+<div id="box" style="width: 350px; height: 350px; background-color: red;">
+	
+</div>
+<br>
+<div>
+	Pilih Warna Box:
+	<select id="color-list">
+		<option value="red" checked>Red</option>
+		<option value="green" checked>green</option>
+		<option value="blue" checked>blue</option>
+		<option value="gray" checked>gray</option>
+	</select><br>
+	Pilih Size Box:
+	<select id="size-list">
+		<option value="200" checked>200 Px</option>
+		<option value="300" checked>300 Px</option>
+		<option value="400" checked>400 Px</option>
+	</select><br>
+	Pilih Visibility Box:
+	<select id="vis-list">
+		<option value="show" checked>Show</option>
+		<option value="hide" checked>Hide</option>
+	</select>
+</div>
+<script type="text/javascript">
+	// color
+	var box=document.getElementById("box");
+	var colorList=document.getElementById("color-list");
+	colorList.addEventListener('change',function(event){
+		box.style.backgroundColor=event.target.value;
+	});
+	// size
+	var box=document.getElementById("box");
+	var sizeList=document.getElementById('size-list');
+	sizeList.addEventListener('change',function(event){
+		box.style.width=event.target.value;
+		box.style.height=event.target.value;
+	});
+	var box=document.getElementById("box");
+	var visList=document.getElementById('vis-list');
+	visList.addEventListener('change',function(event){
+		if (visList.value==='show') {
+			// box.style.opacity=1;
+			box.style.position='absolute';
+			box.style.top=200;
+
+		} else {
+			box.style.position='absolute';
+			box.style.top=100;
+		}
+	});
+</script>
